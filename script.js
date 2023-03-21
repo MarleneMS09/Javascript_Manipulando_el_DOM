@@ -1,3 +1,4 @@
+(() => {
 const btn = document.querySelector('[data-form-btn]');
 
 const createTask = (evento) => {
@@ -9,25 +10,20 @@ const createTask = (evento) => {
     task.classList.add('card');
     input.value= '';
 
-    console.log(checkComplete());
+    
     const taskContent = document.createElement('div');
     taskContent.appendChild(checkComplete());
     const titleTask= document.createElement("span");
     titleTask.classList.add("task");
     titleTask.innerText = value;
     taskContent.appendChild(titleTask);
-    const content = `
-
-
-   <i class="fas fa-trash-alt trashIcon icon"></i>`;
-   //task.innerHTML = content;
    task.appendChild(taskContent);
    list.appendChild(task);
 
-   console.log(content);
+   
 };
 
-console.log(btn);
+
 
 //Arrow functions o funciones anonimas 
 btn.addEventListener('click', createTask);
@@ -48,3 +44,17 @@ const completeTask = (event) =>{
     element.classList.toggle("completeIcon");
     element.classList,toggle('far');
 }
+
+const deleteIcon= () => {
+    const content = `
+
+
+    <i class="fas fa-trash-alt trashIcon icon"></i>`;
+    //task.innerHTML = content;
+    const i = document.createElement('i');
+    i.classList.add("fas", "fa-trash-alt", "trashIcon", "icon");
+    i.addEventListener("click", )
+    return i;
+
+}
+})()
